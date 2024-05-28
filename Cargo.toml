@@ -1,10 +1,20 @@
-[package]
-name = "slot"
+[workspace]
+members = ["katana-genesis"]
+
+[workspace.package]
 version = "0.7.3"
 edition = "2021"
 
-[dependencies]
+[workspace.dependencies]
 katana-primitives = { git = "https://github.com/dojoengine/dojo", tag = "v0.7.0-alpha.3" }
+
+[package]
+name = "slot"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+katana-primitives.workspace = true
 anyhow = "1.0.75"
 axum = "0.6"
 base64 = "0.21.2"

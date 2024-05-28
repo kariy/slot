@@ -2034,6 +2034,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "katana-genesis"
+version = "0.7.3"
+dependencies = [
+ "katana-primitives",
+]
+
+[[package]]
 name = "katana-primitives"
 version = "0.7.0-alpha.3"
 source = "git+https://github.com/dojoengine/dojo?tag=v0.7.0-alpha.3#855da3112c87faea87646db5a406ac77b4daf149"
