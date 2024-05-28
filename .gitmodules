@@ -1,0 +1,4 @@
+[submodule "katana-genesis/controller"]
+	path = katana-genesis/controller
+	url = https://github.com/cartridge-gg/controller
+	branch = main
