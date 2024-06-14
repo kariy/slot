@@ -56,7 +56,7 @@ enum CallbackError {
     #[error("Api error: {0}")]
     Api(#[from] slot::api::Error),
     #[error(transparent)]
-    Other(#[from] anyhow::Error),
+    Credentials(#[from] slot::credential::Error),
 }
 
 impl IntoResponse for CallbackError {
@@ -90,7 +90,7 @@ async fn handler(Query(payload): Query<CallbackPayload>) -> Result<Redirect, Cal
             let account_info = res.data.map(|data| data.me.expect("should exist"));
 
             // 2. Store the access token locally
-            Credentials::new(account_info, token).write()?;
+            Credentials::new(account_info, token).store()?;
 
             println!("You are now logged in!\n");
 
