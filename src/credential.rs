@@ -5,8 +5,8 @@ use std::path::{Path, PathBuf};
 
 use crate::graphql::auth::me::MeMe;
 
-const SLOT_DIR: &str = "slot";
-const CREDENTIALS_FILE: &str = "credentials.json";
+pub const SLOT_DIR: &str = "slot";
+pub const CREDENTIALS_FILE: &str = "credentials.json";
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
